@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SalesWebMvc02.Services;
+using SalesWebMvc02.Models;
 
 namespace SalesWebMvc02.Controllers
 {
@@ -19,6 +20,19 @@ namespace SalesWebMvc02.Controllers
         {
             var list = _sellerService.FindAll();
             return View(list);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+         [HttpPost]
+         [AutoValidateAntiforgeryToken]
+        public IActionResult Create(Seller seller)
+        {
+            _sellerService.Insert(seller);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
