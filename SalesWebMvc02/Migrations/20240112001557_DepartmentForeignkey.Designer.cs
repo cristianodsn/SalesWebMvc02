@@ -9,8 +9,8 @@ using SalesWebMvc02.Data;
 namespace SalesWebMvc02.Migrations
 {
     [DbContext(typeof(SalesWebMvc02Context))]
-    [Migration("20240110232038_DepartmentForeignKey")]
-    partial class DepartmentForeignKey
+    [Migration("20240112001557_DepartmentForeignkey")]
+    partial class DepartmentForeignkey
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -60,7 +60,7 @@ namespace SalesWebMvc02.Migrations
 
                     b.Property<DateTime>("BirthDate");
 
-                    b.Property<int?>("DepartmentId");
+                    b.Property<int>("DepartmentId");
 
                     b.Property<string>("Email");
 
@@ -84,7 +84,8 @@ namespace SalesWebMvc02.Migrations
                 {
                     b.HasOne("SalesWebMvc02.Models.Department", "Department")
                         .WithMany("Sellers")
-                        .HasForeignKey("DepartmentId");
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
