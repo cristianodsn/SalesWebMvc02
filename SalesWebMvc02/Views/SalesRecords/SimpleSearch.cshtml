@@ -1,0 +1,22 @@
+﻿@model IEnumerable<SalesWebMvc02.Models.SalesRecord>
+
+@{
+    ViewData["Title"] = "SimpleSearch";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<nav class="navbar navbar_inverse">
+    <div class="container-fluid">
+        <form class="navbar-form navbar-left" role="search">           
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="minDate" class="text-primary">Min Date</label>
+                    <input type="Date" class="form-control"/>
+                </div>
+            </div>
+            <button type="submit">Filter</button>
+        </form>
+    </div>
+</nav>
+
