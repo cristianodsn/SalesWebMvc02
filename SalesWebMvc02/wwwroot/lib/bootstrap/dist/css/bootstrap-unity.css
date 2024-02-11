@@ -1330,7 +1330,11 @@ mark,
   color: #aea79f;
 }
 .text-primary {
-  color: aliceblue;
+  color: #e95420;
+}
+
+.text-carm {
+    color: #d3f6ee;
 }
 a.text-primary:hover,
 a.text-primary:focus {
