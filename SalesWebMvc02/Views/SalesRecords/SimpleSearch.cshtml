@@ -12,11 +12,11 @@
             <div class="form-group">
                 <div class="form-group">
                     <label for="minDate" class="text-carm">Min Date</label>
-                    <input type="Date" class="form-control" name="minDate"value=@ViewData["minDate"] />
+                    <input type="Date" class="form-control" name="minDate" value=@ViewData["minDate"] />
                 </div>
                 <div class="form-group">
                     <label for="maxDate" class="text-carm">Max Date</label>
-                    <input type="Date" class="form-control" name="maxDate" value=@ViewData["maxDate"] />
+                    <input type="Date" class="form-control" name"maxDate" value=@ViewData["maxD"] />
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Filter</button>
@@ -24,7 +24,7 @@
     </div>
 </nav>
 
-<div class="panel panel-primary" >
+<div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">Total sales = @Model.Sum(obj => obj.Amount).ToString("F2")</h3>
     </div>
