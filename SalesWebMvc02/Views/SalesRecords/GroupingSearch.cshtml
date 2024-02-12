@@ -31,7 +31,7 @@
 
             <div class="alert bg-success" style="margin-bottom: 12px; border-radius: 20px">
                 <div class="text-center">
-                    <h3>@Html.DisplayFor(itemName => item.Key.Name) Total Sales = @item.Sum(x => x.Amount).ToString("F2")</h3>
+                    <h3>@Html.DisplayFor(itemName => item.Key.Name) Total Sales = $@item.Sum(x => x.Amount).ToString("F2")</h3>
                 </div>
             </div>
 
@@ -64,7 +64,7 @@
                                 @Html.DisplayFor(modelsr => sr.Date)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelsr => sr.Amount)
+                                $@Html.DisplayFor(modelsr => sr.Amount)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelsr => sr.Seller.Name)
@@ -75,9 +75,12 @@
             </table>
 
         </div>
-
-
     }
 </div>
+
+<div>
+    <a asp-action="Index" class="btn btn-info">Back</a>
+</div>
+
 
 

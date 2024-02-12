@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="maxDate" class="text-carm">Max Date</label>
-                    <input type="Date" class="form-control" name"maxDate" value=@ViewData["maxD"] />
+                    <input type="Date" class="form-control" name="maxDate" value=@ViewData["maxDate"] />
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Filter</button>
@@ -26,7 +26,7 @@
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Total sales = @Model.Sum(obj => obj.Amount).ToString("F2")</h3>
+        <h3 class="panel-title">Total sales = $@Model.Sum(obj => obj.Amount).ToString("F2")</h3>
     </div>
     <div class="panel-body">
         <table class="table">
@@ -64,7 +64,7 @@
                             @Html.DisplayFor(modelItem => item.Seller.Name)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Amount)
+                            $@Html.DisplayFor(modelItem => item.Amount)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Status)
@@ -74,7 +74,10 @@
             </tbody>
         </table>
     </div>
+</div>
 
+<div>
+    <a asp-action="Index" class="btn btn-info">Back</a>
 </div>
 
 
